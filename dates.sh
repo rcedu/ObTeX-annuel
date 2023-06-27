@@ -27,7 +27,7 @@ premlu=2022-08-29
 nbsem=45
 
 # jour de la semaine (1=mardi)
-nbj=4
+nbj=0
 
 # format de sortie
 fmtd=+"%a %d %b %y"
