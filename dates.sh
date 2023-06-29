@@ -31,6 +31,7 @@ nbj=0
 
 # format de sortie
 fmtd=+"%a %d %b %y"
+fmtc=+"%d/%m/%y"
 
 # vérification que la date donnée soit un lundi
 premlutest=$(gdate -d "$premlu" +"%a")
@@ -48,8 +49,8 @@ for i in $(seq $nbsem) ; do
 	mylubas=$(gdate -d "$mylubas+7 days" +"%D")
 
 	# var pour le lundi, le vendredi et le jour de cours
-	mylu=$(gdate -d "$mylubas" "$fmtd")
-	myve=$(gdate -d "$mylubas+4 days" "$fmtd")
+	mylu=$(gdate -d "$mylubas" "$fmtc")
+	myve=$(gdate -d "$mylubas+4 days" "$fmtc")
 	myjo=$(gdate -d "$mylubas+$nbj days" "$fmtd")
 
 	gprintf "\semai{%2s}{%s}{%s}{%s}{}\n" "$i" "$mylu" "$myve" "$myjo"
