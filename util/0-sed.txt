@@ -1,0 +1,9 @@
+sed 's/\([^;]*\);\([^$;]*\);\([^;]*\);\([^;]*\);\([^;]*\);\([^;]*\);\([^;]*\);\([^;]*\);/echo "\\input{..\/inc\/core}\n\\jour{\1}\n\\heure{\2}\n\\ecole{\3}\n\\salle{\4}\n\\annee{\5}\n\\classe{\6}\n\\matiere{\7}\n\\myid{\8}\n\\mytitre\n" > out\/\8.tex /' dates/1.txt | bash
+
+for i in a b c d e
+do
+	for y in out/${i}*.tex
+	do
+		cat ../dates/${i}.tex >> $y
+	done
+done
