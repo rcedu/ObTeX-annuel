@@ -1,0 +1,59 @@
+\documentclass[french,70pt]{scrartcl}%<1
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{hyperref}
+\usepackage[%< géométrie
+  papersize={33.66cm,19.05cm},%
+  hmargin=1cm,%
+  vmargin=1cm,%
+  head=0.5cm,% might be changed later
+  headsep=0pt,%
+  foot=0.5cm% might be changed later
+  ]{geometry}
+\pagestyle{empty}
+\usepackage{array,graphicx,microtype,xspace,tikz,pgfpages,babel}
+
+\hypersetup{%<
+	pdftitle={},
+	pdfauthor={Cyril Rouiller},
+	pdfsubject={Résumé des cours de l'année},
+	pdfcreator={LaTeX},
+	pdfkeywords={résumé, cours, archive},
+}%>
+
+\makeatletter
+\newcommand*\@jour{Jour}\newcommand*\jour[1]{\renewcommand\@jour{#1}}
+\newcommand*\@heure{Heure}\newcommand*\heure[1]{\renewcommand\@heure{#1}}
+\newcommand*\@ecole{École}\newcommand*\ecole[1]{\renewcommand\@ecole{#1}}
+\newcommand*\@salle{Salle}\newcommand*\salle[1]{\renewcommand\@salle{#1}}
+\newcommand*\@annee{Année}\newcommand*\annee[1]{\renewcommand\@annee{#1}}
+\newcommand*\@classe{Classe}\newcommand*\classe[1]{\renewcommand\@classe{#1}}
+\newcommand*\@matiere{Matière}\newcommand*\matiere[1]{\renewcommand\@matiere{#1}}
+\newcommand*\@myid{Identifiant}\newcommand*\myid[1]{\renewcommand\@myid{#1}}
+
+\newcommand{\mytitre}{%
+	\begin{center}%
+		\begin{tabular}{>{\itshape\scriptsize}r@{\,:\,}lp{1ex}>{\itshape\scriptsize}r@{\,:\,}l}%
+		        	 Jour & \@jour && Heure & \@heure \\%
+			      École & \@ecole && Salle & \@salle \\%
+			      Année & \@annee && Clas. & \@classe \\%
+			    Mat. & \@matiere && ID & \@myid \\%
+		\end{tabular}%
+	\end{center}\cleardoublepage%
+}
+\newcommand*\mys[1]{{\itshape\scriptsize #1}}
+\newcommand{\semai}[5]{%
+	\begin{center}%
+		\mys{Semaine} #1\\[1ex]%
+		#2 \mys{au} #3\\[1ex]%
+		#4\\[1ex]%
+		#5%
+	\end{center}\cleardoublepage%
+}
+\makeatother
+
+
+\begin{document}%<1
+
+% vim: set ts=3 sts=3 sw=3 tw=100 fdm=marker foldmarker=%<,%> filetype=tex spell:%
